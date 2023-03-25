@@ -6,7 +6,7 @@ export class App extends Component {
   state = {  } 
   render() { 
     return (
-      <div>
+      <div className={styles.App}>
 Działa
       </div>
     );

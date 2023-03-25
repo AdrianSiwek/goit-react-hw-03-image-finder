@@ -1,14 +1,19 @@
-import styles from './Modal.css';
+import React, { Component } from "react";
+import styles from './Modal.module.css';
+import PropTypes from "prop-types";
 
 
-const Modal = () => {
-    return (  
-        <div className={styles.overlay}>
-  <div className={styles.modal}>
-    <img src="" alt="" />
-  </div>
-</div>
+class Modal extends Component {
+  state = {  } 
+  render() { 
+    return (
+      <div className={styles.overlay}>
+        <div className={styles.modal}>
+          <img src="" alt="" />
+        </div>
+      </div>
     );
+  }
 }
  
 export default Modal;
