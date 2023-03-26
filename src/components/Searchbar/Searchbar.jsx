@@ -10,7 +10,7 @@ const Searchbar = () => {
     </button>
 
     <input
-      class="input"
+      className={styles.input}
       type="text"
       autocomplete="off"
       autofocus
