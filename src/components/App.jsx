@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import styles from './App.module.css';
 import Searchbar from './Searchbar/Searchbar';
 import Loader from './Loader/Loader';
-import fetchPhoto from 'API/api'
+import { fetchPhoto } from 'API/api';
 import Button from './Button/Button';
+import ImageGallery from './ImageGallery/ImageGallery';
+import Modal from './Modal/Modal';
 
 
 export class App extends Component {
@@ -46,11 +48,11 @@ export class App extends Component {
     });
   }
 
-  showModal = (url) => {
+  handleShow = (url) => {
     this.setState({ showModal: true, largeImageURL: url });
   }
 
-  closeModal = () => {
+  handleClose = () => {
     this.setState({ showModal: false, largeImageURL: "" });
   }
   
@@ -59,10 +61,12 @@ export class App extends Component {
     return (
       <div className={styles.App}>
         <Searchbar onSubmit={this.handleSubmit} />
-        <ImageGallery images={cards} onShow={this.showModal} />
+        <ImageGallery cards={cards} onShow={this.handleShow} />
         {isLoading && <Loader />}
         {cards.length > 0 && !isLoading ? (
-          <Button onClick={this.handleButton}/>) : ("")}
+          <Button onClick={this.handleButton} />) : ("")}
+        {showModal && (
+          <Modal onClose={this.handleClose} image={largeImageURL} />)}
       </div>
     );
   }
