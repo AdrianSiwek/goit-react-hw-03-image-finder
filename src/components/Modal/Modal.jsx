@@ -27,7 +27,7 @@ class Modal extends Component {
     return (
       <div className={styles.overlay} onClick={this.handleModalKeyDown}>
         <div className={styles.modal}>
-          <img src={image} alt="" />
+          <img src={image.largeImageURL} alt="" />
         </div>
       </div>
     );

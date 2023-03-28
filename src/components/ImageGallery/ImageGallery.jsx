@@ -20,7 +20,7 @@ const ImageGallery = ({cards, onShow}) => {
  
 
 ImageGallery.propTypes = {
-    onShow: PropTypes.func,
+    onShow: PropTypes.func.isRequired,
     cards: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
