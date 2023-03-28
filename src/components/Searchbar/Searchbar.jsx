@@ -36,7 +36,7 @@ class Searchbar extends Component {
                         placeholder="Search images and photos"
                         value={this.state.search}
                     />
-                    <button type="submit" className={styles.SearchFormButton}>
+                    <button type="submit" className={styles.SearchFormButton}>&#x1F50D;
                         <span className={styles.SearchFormButtonLabel}>
                             Search
                         </span>
